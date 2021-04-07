@@ -1,0 +1,40 @@
+<h2>Detalhes do Funcionário</h2> 
+
+<hr/>
+<div *ngIf="funcionario">
+  <div>
+    <label><b>Id: </b></label> {{funcionario.id}}
+  </div>
+  <div>
+    <label><b>Nome: </b></label> {{funcionario.nome}}
+  </div>
+  <div>
+    <label><b>Dt. Admissão: </b></label> {{funcionario.dataAdmissao}}
+  </div>
+  <div>
+    <label><b>Dt. Demissão: </b></label> {{funcionario.dataDemissao}}
+  </div>  
+  <div>
+    <fieldset>
+      <legend>Ponto</legend>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Entrada</th>
+            <th>Saída</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pontoFuncionario of funcionario.pontosFuncionarioDTO">
+                <td>{{pontoFuncionario.entrada}}</td>
+                <td>{{pontoFuncionario.saida}}</td>
+            </tr>
+        </tbody>
+       </table>
+    </fieldset>
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar</button><br>

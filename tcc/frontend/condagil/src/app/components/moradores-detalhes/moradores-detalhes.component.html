@@ -1,0 +1,27 @@
+<h2>Detalhes da Despesa</h2> 
+
+<hr/>
+<div *ngIf="morador">
+  <div>
+    <label><b>Id: </b></label> {{morador.id}}
+  </div>
+  <div>
+    <label><b>CPF: </b></label> {{morador.cpf}}
+  </div>
+  <div>
+    <label><b>Nome: </b></label> {{morador.nome}}
+  </div>
+  <div>
+    <label><b>Unidade Habitacional: </b></label> {{morador.identificacaoUnidadeHabitacional}}
+  </div>  
+  <div>
+    <label><b>E-mail: </b></label> {{morador.email}}
+  </div>  
+  <div>
+    <label><b>Telefone: </b></label> {{morador.telefone}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar</button><br>

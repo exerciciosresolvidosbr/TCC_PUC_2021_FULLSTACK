@@ -1,0 +1,27 @@
+<h3>Novo Funcionário</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="nome" required [(ngModel)]="funcionario.nome" name="docIdentificacao">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Dt. Admissão</label>
+            <input type="text" class="form-control" id="dataAdmissao" required [(ngModel)]="funcionario.dataAdmissao" name="dataAdmissao" mask="d0/M0/0000">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Dt. Demissão</label>
+            <input type="text" class="form-control" id="dataDemissao" required [(ngModel)]="funcionario.dataDemissao" name="dataDemissao" mask="d0/M0/0000">
+        </div>
+
+    <button type="submit" class="btn btn-success">Adicionar</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Adição realizada com sucesso!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

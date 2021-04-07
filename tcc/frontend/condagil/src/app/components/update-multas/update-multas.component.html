@@ -1,0 +1,37 @@
+<h3>Atualizar Multa</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+      
+      <div class="form-group">
+        <label for="name">Motivo</label>
+        <textarea class="form-control" id="motivo" required [(ngModel)]="multa.motivo" name="motivo" rows="4"></textarea>
+      </div>
+  
+      <div class="form-group">
+         <label for="name">Data Ocorrência</label>
+         <input type="text" class="form-control" id="dataOcorrencia" required [(ngModel)]="multa.dataOcorrencia" name="dataOcorrencia">
+      </div>
+    
+      <div class="form-group">
+         <label for="name">Data Pagamento</label>
+         <input type="text" class="form-control" id="dataPagamento" required [(ngModel)]="multa.dataPagamento" name="dataPagamento">
+      </div>
+  
+      <div class="form-group">
+         <label for="name">Valor</label>
+         <input type="text" class="form-control" id="valor" required [(ngModel)]="multa.valor" name="valor">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Morador</label>
+        <select class="form-control" required [(ngModel)]="multa.morador.id" [ngModelOptions]="{standalone: true}">
+          <option value="">Selecione...</option>
+          <option *ngFor="let morador of listaMoradores" [ngValue]="morador.id" [selected]="true">
+            {{morador.nome}}
+          </option>
+        </select>
+      </div>
+
+    <button type="submit" class="btn btn-success">Atualizar</button>
+  </form>
+</div>

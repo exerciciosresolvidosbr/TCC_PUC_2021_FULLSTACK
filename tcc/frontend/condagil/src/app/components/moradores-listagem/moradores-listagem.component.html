@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Moradores</h2>
+    </div>
+    <div class="panel-body">
+      <button (click)="adicionarMorador()" class="btn btn-primary">Novo</button>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>CPF</th>
+            <th>Nome</th>
+            <th>Unid. Habitacional</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let morador of listaMoradores | async">
+            <td>{{morador.id}}</td> 
+            <td>{{morador.cpf}}</td>
+            <td>{{morador.nome}}</td>
+            <td>{{morador.identificacaoUnidadeHabitacional}}</td>
+            <td>{{morador.email}}</td>
+            <td>{{morador.telefone}}</td>
+            <td><button (click)="deletarMorador(morador.id)" class="btn btn-danger">Deletar</button>
+                <button (click)="atualizarMorador(morador.id)" class="btn btn-info" style="margin-left: 10px">Atualizar</button>
+                <button (click)="moradorDetalhes(morador.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Receitas</h2>
+    </div>
+    <div class="panel-body">
+      <button (click)="adicionarReceita()" class="btn btn-primary">Novo</button>
+      <button (click)="expotarReceitasPdf()" class="btn btn-danger">Exportar PDF</button>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Descrição</th>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let receita of listaReceitas | async">
+            <td>{{receita.id}}</td>
+            <td>{{receita.descricao}}</td>
+            <td>{{receita.dataReceita}}</td>
+            <td>{{receita.valor}}</td>
+            <td><button (click)="deletarReceita(receita.id)" class="btn btn-danger">Deletar</button>
+                <button (click)="atualizarReceita(receita.id)" class="btn btn-info" style="margin-left: 10px">Atualizar</button>
+                <button (click)="receitaDetalhes(receita.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

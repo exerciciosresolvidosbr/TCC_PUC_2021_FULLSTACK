@@ -1,0 +1,21 @@
+<h2>Detalhes da Despesa</h2> 
+
+<hr/>
+<div *ngIf="despesa">
+  <div>
+    <label><b>Id: </b></label> {{despesa.id}}
+  </div>
+  <div>
+    <label><b>Descrição: </b></label> {{despesa.descricao}}
+  </div>
+  <div>
+    <label><b>Data: </b></label> {{despesa.dataDespesa}}
+  </div>
+  <div>
+    <label><b>Valor: </b></label> {{despesa.valor}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar</button><br>

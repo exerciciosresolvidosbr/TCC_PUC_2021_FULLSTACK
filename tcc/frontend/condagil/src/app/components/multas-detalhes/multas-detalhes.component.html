@@ -1,0 +1,24 @@
+<h2>Detalhes da Multa</h2> 
+
+<hr/>
+<div *ngIf="multa">
+  <div>
+    <label><b>Id: </b></label> {{multa.id}}
+  </div>
+  <div>
+    <label><b>Motivo: </b></label> {{multa.motivo}}
+  </div>
+  <div>
+    <label><b>Data Ocorrência: </b></label> {{multa.dataOcorrencia}}
+  </div>
+  <div>
+    <label><b>Data Pagamento: </b></label> {{multa.dataPagamento}}
+  </div>
+  <div>
+    <label><b>Valor: </b></label> {{multa.valor}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar</button><br>

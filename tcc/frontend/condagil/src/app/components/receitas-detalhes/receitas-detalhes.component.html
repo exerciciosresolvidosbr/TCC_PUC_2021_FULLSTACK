@@ -1,0 +1,21 @@
+<h2>Detalhes da Receita</h2> 
+
+<hr/>
+<div *ngIf="receita">
+  <div>
+    <label><b>Id: </b></label> {{receita.id}}
+  </div>
+  <div>
+    <label><b>Descrição: </b></label> {{receita.descricao}}
+  </div>
+  <div>
+    <label><b>Data: </b></label> {{receita.dataReceita}}
+  </div>
+  <div>
+    <label><b>Valor: </b></label> {{receita.valor}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar</button><br>

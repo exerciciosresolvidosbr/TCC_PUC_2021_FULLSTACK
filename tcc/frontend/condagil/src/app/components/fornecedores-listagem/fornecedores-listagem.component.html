@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Fornecedores</h2>
+    </div>
+    <div class="panel-body">
+      <button (click)="adicionarFornecedor()" class="btn btn-primary">Novo</button>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Doc. Identificação</th>
+            <th>Nome</th>
+            <th>Produto/Serviço</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let fornecedor of listaFornecedores | async">
+            <td>{{fornecedor.id}}</td>
+            <td>{{fornecedor.docIdentificacao}}</td>
+            <td>{{fornecedor.nome}}</td>
+            <td>{{fornecedor.produtoServico}}</td>
+            <td><button (click)="deletarFornecedor(fornecedor.id)" class="btn btn-danger">Deletar</button>
+                <button (click)="atualizarFornecedor(fornecedor.id)" class="btn btn-info" style="margin-left: 10px">Atualizar</button>
+                <button (click)="fornecedorDetalhes(fornecedor.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

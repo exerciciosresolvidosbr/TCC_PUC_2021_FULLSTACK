@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Funcionários</h2>
+    </div>
+    <div class="panel-body">
+      <button (click)="adicionarFuncionario()" class="btn btn-primary">Novo</button>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Dt. Admissão</th>
+            <th>Dt. Demissão</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let funcionario of listaFuncionarios | async">
+            <td>{{funcionario.id}}</td>
+            <td>{{funcionario.nome}}</td>
+            <td>{{funcionario.dataAdmissao}}</td>
+            <td>{{funcionario.dataDemissao}}</td>
+            <td><button (click)="deletarFuncionario(funcionario.id)" class="btn btn-danger">Deletar</button>
+                <button (click)="atualizarFuncionario(funcionario.id)" class="btn btn-info" style="margin-left: 10px">Atualizar</button>
+                <button (click)="funcionarioDetalhes(funcionario.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

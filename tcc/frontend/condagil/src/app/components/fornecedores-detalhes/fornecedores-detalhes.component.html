@@ -1,0 +1,21 @@
+<h2>Detalhes do Fornecedor</h2> 
+
+<hr/>
+<div *ngIf="fornecedor">
+  <div>
+    <label><b>Id: </b></label> {{fornecedor.id}}
+  </div>
+  <div>
+    <label><b>Doc. Identificação: </b></label> {{fornecedor.docIdentificacao}}
+  </div>
+  <div>
+    <label><b>Nome: </b></label> {{fornecedor.nome}}
+  </div>
+  <div>
+    <label><b>Produto/Serviço: </b></label> {{fornecedor.produtoServico}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar</button><br>

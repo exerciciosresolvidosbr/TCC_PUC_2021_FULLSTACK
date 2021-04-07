@@ -1,0 +1,21 @@
+<h3>Atualizar Receita</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Descrição</label>
+      <input type="text" class="form-control" id="descricao" required [(ngModel)]="receita.descricao" name="descricao">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Data</label>
+      <input type="text" class="form-control" id="dataReceita" required [(ngModel)]="receita.dataReceita" name="dataReceita">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Valor</label>
+      <input type="text" class="form-control" id="valor" required [(ngModel)]="receita.valor" name="valor">
+    </div>
+
+    <button type="submit" class="btn btn-success">Atualizar</button>
+  </form>
+</div>

@@ -1,0 +1,37 @@
+<h3>Novo Morador</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+      
+    <div class="form-group">
+      <label for="name">CPF</label>
+      <input type="text" class="form-control" id="cpf" required [(ngModel)]="morador.cpf" name="cpf">
+    </div>
+
+    <div class="form-group">
+       <label for="name">Nome</label>
+       <input type="text" class="form-control" id="nome" required [(ngModel)]="morador.nome" name="nome">
+    </div>
+  
+    <div class="form-group">
+        <label for="name">Unid. Habitacional</label>
+        <input type="text" class="form-control" id="identificacaoUnidadeHabitacional" required [(ngModel)]="morador.identificacaoUnidadeHabitacional" name="identificacaoUnidadeHabitacional">
+    </div>
+
+    <div class="form-group">
+        <label for="name">E-mail</label>
+        <input type="text" class="form-control" id="email" required [(ngModel)]="morador.email" name="email">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Telefone</label>
+        <input type="text" class="form-control" id="telefone" required [(ngModel)]="morador.telefone" name="telefone">
+    </div>
+
+    <button type="submit" class="btn btn-success">Adicionar</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Adição realizada com sucesso!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

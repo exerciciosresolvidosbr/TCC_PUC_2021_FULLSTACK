@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Despesas</h2>
+    </div>
+    <div class="panel-body">
+      <button (click)="adicionarDespesa()" class="btn btn-primary">Novo</button>
+      <button (click)="expotarDespesasPdf()" class="btn btn-danger">Exportar PDF</button>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Descrição</th>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let despesa of listaDespesas | async">
+            <td>{{despesa.id}}</td>
+            <td>{{despesa.descricao}}</td>
+            <td>{{despesa.dataDespesa}}</td>
+            <td>{{despesa.valor}}</td>
+            <td><button (click)="deletarDespesa(despesa.id)" class="btn btn-danger">Deletar</button>
+                <button (click)="atualizarDespesa(despesa.id)" class="btn btn-info" style="margin-left: 10px">Atualizar</button>
+                <button (click)="despesaDetalhes(despesa.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,49 @@
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header">
+                                <h3 class="text-center font-weight-light my-4">
+                                    Login
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                                    <div class="form-group">
+                                        <label for="username">Email</label>
+                                        <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel" />
+                                        <div class="alert alert-danger" role="alert" *ngIf="f.submitted && username.invalid">Email é obrigatório!</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Senha</label>
+                                        <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel" />
+                                        <div class="alert alert-danger" role="alert" *ngIf="f.submitted && password.invalid">
+                                            <div *ngIf="password.errors.required">Senha é obrigatória!</div>
+                                            <div *ngIf="password.errors.minlength">Senha precisa ter no mínimo 6 caracteres!</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">Login falhou: {{ errorMessage }}</div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer text-center">
+                                <div class="small">
+                                    <a href="#" (click)="prepararCadastro()">
+                                        Não possui usuário ? cadastre-se
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

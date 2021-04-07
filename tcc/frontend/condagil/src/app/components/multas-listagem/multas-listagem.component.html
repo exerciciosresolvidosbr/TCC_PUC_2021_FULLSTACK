@@ -1,0 +1,36 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Multas</h2>
+  </div>
+  <div class="panel-body">
+    <button (click)="adicionarMulta()" class="btn btn-primary">Novo</button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Morador</th>
+          <th>Motivo</th>
+          <th>Dt. Ocorrência</th>
+          <th>Dt. Pagamento</th>
+          <th>Valor</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let multa of listaMultas | async">
+          <td>{{multa.id}}</td> 
+          <td>{{multa.morador.nome}}</td>
+          <td>{{multa.motivo}}</td>
+          <td>{{multa.dataOcorrencia}}</td>
+          <td>{{multa.dataPagamento}}</td>
+          <td>{{multa.valor}}</td>
+          <td><button (click)="deletarMulta(multa.id)" class="btn btn-danger">Deletar</button>
+              <button (click)="atualizarMulta(multa.id)" class="btn btn-info" style="margin-left: 5px">Atualizar</button>
+              <button (click)="multaDetalhes(multa.id)" class="btn btn-info" style="margin-left: 5px">Detalhes</button>
+              <button (click)="exportarPdf(multa.id)" class="btn btn-danger" style="margin-left: 5px" *ngIf="!multa.dataPagamento">PDF</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

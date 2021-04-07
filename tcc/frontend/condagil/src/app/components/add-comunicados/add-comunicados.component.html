@@ -1,0 +1,22 @@
+<h3>Novo Comunicado</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+        <label for="name">Data Validade</label>
+        <input type="text" class="form-control" id="dataValidade" required [(ngModel)]="comunicado.dataValidade" name="dataValidade" mask="d0/M0/0000">
+      </div>
+  
+      <div class="form-group">
+        <label for="name">Texto</label>
+        <textarea class="form-control" id="texto" required [(ngModel)]="comunicado.texto" name="texto" rows="4"></textarea>
+      </div>
+
+    <button type="submit" class="btn btn-success">Adicionar</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Adição realizada com sucesso!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

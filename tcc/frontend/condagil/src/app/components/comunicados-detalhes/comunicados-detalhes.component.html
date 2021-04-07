@@ -1,0 +1,18 @@
+<h2>Detalhes do Comunicado</h2> 
+
+<hr/>
+<div *ngIf="comunicado">
+  <div>
+    <label><b>Id: </b></label> {{comunicado.id}}
+  </div>
+  <div>
+    <label><b>Descrição: </b></label> {{comunicado.dataValidade}}
+  </div>
+  <div>
+    <label><b>Texto: </b></label> {{comunicado.texto}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar</button><br>

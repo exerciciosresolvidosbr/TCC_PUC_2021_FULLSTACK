@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Comunicados</h2>
+    </div>
+    <div class="panel-body">
+      <button (click)="adicionarComunicado()" class="btn btn-primary">Novo</button>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Validade</th>
+            <th>Texto</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let comunicado of listaComunicados | async">
+            <td>{{comunicado.id}}</td>
+            <td>{{comunicado.dataValidade}}</td>
+            <td>{{comunicado.texto}}</td>
+            <td><button (click)="deletarComunicado(comunicado.id)" class="btn btn-danger">Deletar</button>
+                <button (click)="atualizarComunicado(comunicado.id)" class="btn btn-info" style="margin-left: 5px">Atualizar</button>
+                <button (click)="comunicadoDetalhes(comunicado.id)" class="btn btn-info" style="margin-left: 5px">Detalhes</button>
+                <button (click)="exportarPdf(comunicado.id)" class="btn btn-danger" style="margin-left: 5px">PDF</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

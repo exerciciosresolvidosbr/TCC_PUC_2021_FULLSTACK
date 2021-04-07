@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="home" class="nav-link" routerLinkActive="active">Home</a>
+      </li>
+      <li class="nav-item">
+          <a routerLink="receitas" class="nav-link" routerLinkActive="active" *ngIf="!isMorador && !isFuncionario">Receitas</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="despesas" class="nav-link" routerLinkActive="active" *ngIf="!isMorador && !isFuncionario">Despesas</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="comunicados" class="nav-link" routerLinkActive="active">Comunicados</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="multas" class="nav-link" routerLinkActive="active" *ngIf="!isFuncionario">Multas</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="moradores" class="nav-link" routerLinkActive="active" *ngIf="!isMorador && !isFuncionario">Moradores</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="fornecedores" class="nav-link" routerLinkActive="active" *ngIf="!isMorador && !isFuncionario">Fornecedores</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="funcionarios" class="nav-link" routerLinkActive="active" *ngIf="!isMorador">Funcionários</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="graficos" class="nav-link" routerLinkActive="active" *ngIf="!isMorador">Gráficos</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <br>
+    <h2 style="text-align: center;">{{title}}</h2>
+    <hr>  
+    <div class="card">
+      <div class="card-body">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="text-muted py-5">
+    <div class="container">
+        <span>Todos os direitos reservados 2021 @CondAgil</span>
+    </div>
+  </footer>
