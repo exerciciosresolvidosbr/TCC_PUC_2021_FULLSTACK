@@ -4,6 +4,7 @@ import { TokenStorageService } from '../../services/token-storage-service.servic
 import { AuthService } from '../../services/auth-service.service';
 import { UserService } from '../../services/user-service.service';
 import { Router } from '@angular/router';
+import { AppConstants } from '../../helpers/app.constants';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   currentUser: any;
-  googleURL = 'http://localhost:8080/oauth2/authorization/google?redirect_uri=http://localhost:8081/login';
+  googleURL = `${AppConstants.BASE_URL}oauth2/authorization/google?redirect_uri=http://localhost:8081/login`;
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private route: ActivatedRoute, private router: Router, private userService: UserService) {}
 
