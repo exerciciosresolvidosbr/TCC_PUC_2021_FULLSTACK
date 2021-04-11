@@ -23,6 +23,7 @@ import org.springframework.security.oauth2.client.endpoint.OAuth2AuthorizationCo
 import org.springframework.security.oauth2.client.http.OAuth2ErrorResponseErrorHandler;
 import org.springframework.security.oauth2.core.http.converter.OAuth2AccessTokenResponseHttpMessageConverter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.header.writers.StaticHeadersWriter;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.client.RestTemplate;
 
@@ -93,6 +94,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(oAuth2AuthenticationSuccessHandler)
                 .failureHandler(oAuth2AuthenticationFailureHandler);
  
+        http.headers().addHeaderWriter(new StaticHeadersWriter("Access-Control-Allow-Origin", "*"));
         // Add our custom Token based authentication filter
         http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
