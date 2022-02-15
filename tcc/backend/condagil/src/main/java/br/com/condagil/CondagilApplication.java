@@ -24,10 +24,12 @@ public class CondagilApplication {
         CorsConfiguration config = new CorsConfiguration();  
         config.setAllowCredentials(true); 
         // *** URL below needs to match the Vue client URL and port ***
-        config.setAllowedOrigins(Collections.singletonList("http://localhost:8080"));
-        config.setAllowedOrigins(Collections.singletonList("http://condagilbackend-env.eba-4put3pzz.sa-east-1.elasticbeanstalk.com"));
-        config.setAllowedOrigins(Collections.singletonList("http://localhost:4200"));
-        config.setAllowedOrigins(Collections.singletonList("http://condagilfrontend.s3-website-sa-east-1.amazonaws.com"));
+        //config.setAllowedOrigins(Collections.singletonList("http://localhost:8080"));
+        //config.setAllowedOrigins(Collections.singletonList("http://condagilbackend-env.eba-4put3pzz.sa-east-1.elasticbeanstalk.com"));
+        //config.setAllowedOrigins(Collections.singletonList("http://localhost:4200"));
+        //config.setAllowedOrigins(Collections.singletonList("http://condagilfrontend.s3-website-sa-east-1.amazonaws.com"));
+        //config.setAllowedOrigins(Collections.singletonList("http://localhost:8080/**"));
+        config.setAllowedOriginPatterns(Collections.singletonList("*"));
         config.setAllowedMethods(Collections.singletonList("*"));  
         config.setAllowedHeaders(Collections.singletonList("*"));  
         source.registerCorsConfiguration("/**", config);  
